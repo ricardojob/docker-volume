@@ -1,0 +1,20 @@
+version: '2'
+services:
+   postgres:
+       image: jose/motivacao
+       build: ./postgres
+       container_name: bancoamotivacao
+       ports:
+         - "5433:5432"
+       volumes:
+            - ./postgres/db:/var/lib/postgresql/data/
+   web:
+       image: jose/motivacaojsf
+       build: ./app
+       container_name: appmotivacao
+       ports:
+         - "8082:8080"
+       volumes:
+          - ./app/deploy:/opt/payara5/glassfish/domains/domain1/autodeploy/
+       links:
+         - "postgres:host-banco"

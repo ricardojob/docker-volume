@@ -1,0 +1,22 @@
+.DS_Store
+
+# Maven
+/target/
+**/target/
+**/deploy/
+/postgres/db/
+
+# Netbeans
+/nbproject
+nb-configuration.xml
+
+# Eclipse
+**/.settings
+**/.project
+**/.classpath
+
+# IDEA
+**/target
+.idea/**
+**/.idea/**
+**/*.iml
